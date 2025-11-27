@@ -1,15 +1,95 @@
 package ge.tbc.testautomation.javaoop.runners;
 import ge.tbc.testautomation.javaoop.figures.Circle;
-import ge.tbc.testautomation.javaoop.figures.Figure;
-import ge.tbc.testautomation.javaoop.figures.Rectangle;
-import ge.tbc.testautomation.javaoop.figures.Triangle;
-import ge.tbc.testautomation.javaoop.util.HelperFunctions;
-import ge.tbc.testautomation.javaoop.util.Util;
+
+import ge.tbc.testautomation.exceptionsStringOperationsRegex.LimitException;
+import ge.tbc.testautomation.exceptionsStringOperationsRegex.RadiusException;
 
 
 public class Main {
-    public static void main(String[] args)
-    {
+
+    public static void main(String[] args) {
+
+        try {
+            Circle c1 = new Circle(-5.0);
+        } catch (RadiusException e) {
+            System.out.println("RadiusException caught: " + e.getMessage());
+        }
+
+        try {
+            Circle c2 = new Circle(1.0);
+            Circle c3 = new Circle(2.0);
+            Circle c4 = new Circle(3.0);
+            Circle c5 = new Circle(4.0);
+            Circle c6 = new Circle(5.0);
+            Circle c7 = new Circle(6.0); // Here we should have a problem :D
+        } catch (LimitException e) {
+            System.out.println("LimitException caught: " + e.getMessage());
+        }
+          catch (RadiusException e) {
+        // We can also add this, just in case, if someone tryes to put negative number
+        System.out.println("RadiusException caught: " + e.getMessage());
+    }
+
+        stringOperations();
+        phoneValidationDemo();
+    }
+
+
+    private static void stringOperations() {
+
+        String sentence = "Test Automation Bootcamp 12, 2025";
+
+        // Automation in lowercase
+        String[] words = sentence.split(" ");
+        String automationWord = words[1].toLowerCase();   //We say 1 because in this case the is 0 and 1 is automation
+        System.out.println("Automation lowercase: " + automationWord);
+
+        // line by line words
+        System.out.println("Words in sentence:");
+        for (String w : words) {
+            System.out.println(w);
+        }
+
+        // length
+        System.out.println("Length of sentence: " + sentence.length());
+
+        // spaces will be turned in dashes
+        String replaced = sentence.replace(" ", "-");
+        System.out.println("With dashes: " + replaced);
+    }
+
+
+    private static boolean phoneNumberValidation(String phoneNumber) {
+
+        String cleaned = phoneNumber.replace("-", "");
+
+        String regex = "^(555|595|592|599)[0-9]{6}$";
+
+        return cleaned.matches(regex);
+    }
+
+
+    private static void phoneValidationDemo() {
+
+        String[] phoneNumbers = {
+                "599-14-15-16",
+                "555-12-34-56",
+                "592-00-00-00",
+                "593-14-15-16",
+                "595141516",
+                "555-123-4567"
+        };
+
+        for (String number : phoneNumbers) {
+            boolean isValid = phoneNumberValidation(number);
+            System.out.println(number + " -> " + (isValid ? "VALID" : "INVALID"));
+        }
+    }
+}
+
+
+
+        /* HW - 4
         //New HomeWork (Also added loop print as was suggested in previous HW, see below)
 
         Figure figure =  new Figure();
@@ -56,7 +136,9 @@ public class Main {
         HelperFunctions.compareRectangles(rect1,rect2);
 
 
-        //Privious HomeWork
+         */
+
+        //Privious HomeWork (3)
         /*
         Circle circle = new Circle(3.14);
         System.out.println(Circle.numberOfCircleInstances);
@@ -100,5 +182,5 @@ public class Main {
         }
 
         */
-    }
-}
+
+
