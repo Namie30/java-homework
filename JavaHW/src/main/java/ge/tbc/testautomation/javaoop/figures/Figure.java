@@ -12,4 +12,11 @@ public class Figure {
         return -1.0;
     }
 
+    public static int numberOfInstances = 0;
+
+    public Figure() {
+        numberOfInstances++;
+    }
+
+
 }
