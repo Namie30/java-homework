@@ -12,6 +12,7 @@ public class Main {
         Circle circle = new Circle(5);
         circle.printPackageName();
         System.out.println("Circle area: (Test #1git )" + circle.getArea());
+        System.out.println("Circle area: (Test #2, not hot_fix)" + circle.getArea());
         System.out.println("Circle length: " + circle.getLength());
 
         System.out.println("Circle valid? " + circle.isValid());
