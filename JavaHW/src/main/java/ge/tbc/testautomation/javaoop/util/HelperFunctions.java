@@ -3,6 +3,7 @@ package ge.tbc.testautomation.javaoop.util;
 import ge.tbc.testautomation.javaoop.figures.Rectangle;
 
 public class HelperFunctions {
+    /*
     public static void compareRectangles(Rectangle r1, Rectangle r2)
     {
         double p1 = r1.getPerimeter();
@@ -21,4 +22,6 @@ public class HelperFunctions {
             System.out.println("parameter 1 == parameter 2");
         }
     }
+
+     */
 }

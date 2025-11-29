@@ -1,6 +1,31 @@
 package ge.tbc.testautomation.javaoop.figures;
 
 public class Rectangle extends Figure{
+
+    private double width;
+    private double height;
+
+    public Rectangle(double width, double height) {
+        this.width  = width;
+        this.height = height;
+    }
+
+    @Override
+    public double getArea() {
+        return width * height;
+    }
+
+    @Override
+    public double getLength() {
+        return 2 * (width + height);   //P
+    }
+
+    @Override
+    public void printPackageName() {
+        System.out.println(getClass().getPackageName());
+    }
+
+    /*
     private double a;
     private double b;
 
@@ -21,5 +46,5 @@ public class Rectangle extends Figure{
      {
          return 2 * (a + b);
      }
-
+*/
 }

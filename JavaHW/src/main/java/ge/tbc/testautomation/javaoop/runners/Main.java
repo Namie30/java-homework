@@ -1,12 +1,53 @@
 package ge.tbc.testautomation.javaoop.runners;
-import ge.tbc.testautomation.javaoop.figures.Circle;
 
-import ge.tbc.testautomation.exceptionsStringOperationsRegex.LimitException;
-import ge.tbc.testautomation.exceptionsStringOperationsRegex.RadiusException;
+import ge.tbc.testautomation.javaoop.figures.Circle;
+import ge.tbc.testautomation.javaoop.figures.Triangle;
+import ge.tbc.testautomation.javaoop.figures.Figure;
 
 
 public class Main {
+    public static void main(String[] args) {
 
+        // Circle
+        Circle circle = new Circle(5);
+        circle.printPackageName();
+        System.out.println("Circle area: " + circle.getArea());
+        System.out.println("Circle length: " + circle.getLength());
+
+        System.out.println("Circle valid? " + circle.isValid());
+        circle.doubleSize();
+        System.out.println("Circle radius after doubleSize: " + circle.getRadius());
+        System.out.println("Circle area after doubleSize: " + circle.getArea());
+
+        System.out.println("-------------");
+
+        // Triangle
+        Triangle triangle = new Triangle(3, 4, 5);
+        triangle.printPackageName();
+        System.out.println("Triangle area: " + triangle.getArea());
+        System.out.println("Triangle length: " + triangle.getLength());
+        System.out.println("Triangle valid? " + triangle.isValid());
+
+        triangle.customSize(1.5);
+        System.out.println("Triangle perimeter after customSize(1.5): " + triangle.getLength());
+
+        System.out.println("-------------");
+
+        // Invalid examples
+        Circle invalidCircle = new Circle(-2);
+        Triangle invalidTriangle = new Triangle(1, 2, 10);
+    }
+
+
+
+
+
+
+
+
+}
+    /*
+    // HW - 5
     public static void main(String[] args) {
 
         try {
@@ -85,7 +126,7 @@ public class Main {
             System.out.println(number + " -> " + (isValid ? "VALID" : "INVALID"));
         }
     }
-}
+*/
 
 
 
