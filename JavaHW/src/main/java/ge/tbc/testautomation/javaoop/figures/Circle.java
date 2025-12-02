@@ -2,8 +2,39 @@ package ge.tbc.testautomation.javaoop.figures;
 import ge.tbc.testautomation.abstractClassesInterfaces.interfaces.IResizable;
 import ge.tbc.testautomation.abstractClassesInterfaces.interfaces.IValidFigure;
 
-public class Circle extends Figure implements IResizable, IValidFigure{
+public class Circle implements Comparable{
 
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{radius=" + radius + "}";
+    }
+
+    @Override
+    public int compareTo(Object other) {
+        // Casting from Object to Circle
+        Circle otherCircle = (Circle) other;
+
+        if (this.radius > otherCircle.radius) {
+            return 1;
+        } else if (this.radius < otherCircle.radius) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
+
+    /*
+    //HW 6
     private double radius;
     private boolean valid;
 
@@ -58,6 +89,8 @@ public class Circle extends Figure implements IResizable, IValidFigure{
     public boolean isValid() {
         return valid;
     }
+
+     */
 
 
     /* Old HomeWork, HW 5
