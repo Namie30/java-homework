@@ -8,6 +8,8 @@ import ge.tbc.testautomation.javaoop.figures.Figure;
 public class Main {
     public static void main(String[] args) {
 
+        //HW - 6
+/*
         // Circle
         Circle circle = new Circle(5);
         circle.printPackageName();
@@ -38,8 +40,8 @@ public class Main {
         Circle invalidCircle = new Circle(-2);
         Triangle invalidTriangle = new Triangle(1, 2, 10);
     }
-
-
+  */
+}
 
 
 
