@@ -1,12 +1,44 @@
 package ge.tbc.testautomation.javaoop.runners;
 
+import ge.tbc.testautomation.annotationsAndStreams.Analyzable;
+import ge.tbc.testautomation.annotationsAndStreams.VariableNameAnnotation;
 import ge.tbc.testautomation.javaoop.figures.Circle;
 import ge.tbc.testautomation.javaoop.figures.Triangle;
 import ge.tbc.testautomation.javaoop.figures.Figure;
-
+import java.lang.reflect.Field;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
+
+        Analyzable analyzable = new Analyzable();
+
+        Field[] fields = analyzable.getClass().getDeclaredFields();
+
+        List<Field> matchingFields = List.of(fields).stream()
+                .filter(field -> field.isAnnotationPresent(VariableNameAnnotation.class)) // Filter only annotated fields
+                .filter(field -> {
+                    VariableNameAnnotation annotation = field.getAnnotation(VariableNameAnnotation.class);
+                    return annotation.name().equals(field.getName());
+                })
+                .collect(Collectors.toList());
+
+        List<Field> nonMatchingFields = List.of(fields).stream()
+                .filter(field -> field.isAnnotationPresent(VariableNameAnnotation.class)) // Filter only annotated fields
+                .filter(field -> {
+                    VariableNameAnnotation annotation = field.getAnnotation(VariableNameAnnotation.class);
+                    return !annotation.name().equals(field.getName());
+                })
+                .collect(Collectors.toList());
+
+        //matching fields
+        System.out.println("Matching Fields (Name matches the annotation's 'name'):");
+        matchingFields.forEach(field -> System.out.println(field.getName()));
+
+        //non-matching fields
+        System.out.println("Non-Matching Fields (Name does NOT match the annotation's 'name'):");
+        nonMatchingFields.forEach(field -> System.out.println(field.getName()));
 
         //HW - 6
 /*
