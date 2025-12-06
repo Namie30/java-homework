@@ -1,8 +1,9 @@
 package ge.tbc.testautomation.javaoop.figures;
+import ge.tbc.testautomation.javaoop.figures.Figure;
 import ge.tbc.testautomation.abstractClassesInterfaces.interfaces.IResizable;
 import ge.tbc.testautomation.abstractClassesInterfaces.interfaces.IValidFigure;
 
-public class Circle implements Comparable{
+public class Circle extends Figure {
 
     private double radius;
 
@@ -10,16 +11,18 @@ public class Circle implements Comparable{
         this.radius = radius;
     }
 
-    public double getRadius() {
-        return radius;
+    @Override
+    public double getArea() {
+        return Math.PI * radius * radius;
     }
 
     @Override
     public String toString() {
-        return "Circle{radius=" + radius + "}";
+        return "Circle{" + "radius=" + radius + '}';
     }
+}
 
-    @Override
+    /*@Override
     public int compareTo(Object other) {
         // Casting from Object to Circle
         Circle otherCircle = (Circle) other;
@@ -31,7 +34,7 @@ public class Circle implements Comparable{
         } else {
             return 0;
         }
-    }
+    }*/
 
     /*
     //HW 6
@@ -123,4 +126,4 @@ public class Circle implements Comparable{
 
      */
 
-}
+
