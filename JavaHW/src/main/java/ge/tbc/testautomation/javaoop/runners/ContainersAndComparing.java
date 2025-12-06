@@ -88,7 +88,7 @@ public class ContainersAndComparing {
         rectangles.add(new Rectangle(3, 3));
         rectangles.add(new Rectangle(6, 2));
 
-        Collections.sort(rectangles);
+      //  Collections.sort(rectangles);
         System.out.println(rectangles);
 
         //TreeSet - Rectangle

@@ -1,6 +1,6 @@
 package ge.tbc.testautomation.javaoop.figures;
 
-public class Rectangle implements Comparable{
+public class Rectangle extends Figure{
 
     private double width;
     private double height;
@@ -24,25 +24,9 @@ public class Rectangle implements Comparable{
 
     @Override
     public String toString() {
-        return "Rectangle{" +
-                "width=" + width +
-                ", height=" + height +
-                ", area=" + getArea() +
-                '}';
+        return "Rectangle{" + "width=" + width + ", height=" + height + '}';
     }
-
-    @Override
-    public int compareTo(Object o) {
-        Rectangle r = (Rectangle) o;  // casting as homework requires
-
-        double area1 = this.getArea();
-        double area2 = r.getArea();
-
-        // Reverse sorting: bigger area comes first
-        if (area1 > area2) return -1;
-        else if (area1 < area2) return 1;
-        else return 0;
-    }
+}
 
     /*
     //Old HomeWork 5-6
@@ -93,4 +77,4 @@ public class Rectangle implements Comparable{
          return 2 * (a + b);
      }
 */
-}
+
