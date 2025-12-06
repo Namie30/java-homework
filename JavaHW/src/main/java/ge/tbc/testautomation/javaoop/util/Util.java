@@ -1,3 +1,4 @@
+/*
 package ge.tbc.testautomation.javaoop.util;
 import ge.tbc.testautomation.javaoop.figures.Circle;
 
@@ -6,3 +7,4 @@ public class Util {
         return "[Circle: radius - " + circle.getRadius() + "]";
     }
 }
+*/

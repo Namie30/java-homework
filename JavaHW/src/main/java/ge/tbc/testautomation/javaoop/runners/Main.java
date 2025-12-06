@@ -1,18 +1,49 @@
 package ge.tbc.testautomation.javaoop.runners;
+import ge.tbc.testautomation.generics.*;
+import java.util.Arrays;
 
 import ge.tbc.testautomation.annotationsAndStreams.Analyzable;
 import ge.tbc.testautomation.annotationsAndStreams.VariableNameAnnotation;
 import ge.tbc.testautomation.javaoop.figures.Circle;
-import ge.tbc.testautomation.javaoop.figures.Triangle;
 import ge.tbc.testautomation.javaoop.figures.Figure;
+import ge.tbc.testautomation.javaoop.figures.*;
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Main {
-    public static void main(String[] args) {
+    private static <K, D> AnyPair<Field[], Field[]> getDeclaredFields(K objOne, D objTwo) {
+        Field[] fieldsOfFirst = objOne.getClass().getDeclaredFields();
+        Field[] fieldsOfSecond = objTwo.getClass().getDeclaredFields();
 
-        Analyzable analyzable = new Analyzable();
+        return new AnyPair<>(fieldsOfFirst, fieldsOfSecond);
+    }
+    public static void main(String[] args) {
+        AnyPair<Field[], Field[]> fieldsPair = getDeclaredFields(1, "hello");
+
+        List<Field> integerFields = Arrays.asList(fieldsPair.getElementOne());
+        List<Field> stringFields = Arrays.asList(fieldsPair.getElementTwo());
+
+        System.out.println("Fields of Integer class:");
+        System.out.println(integerFields);
+
+        System.out.println("Fields of String class:");
+        System.out.println(stringFields);
+
+
+        Circle circle = new Circle(5.0);
+        Rectangle rectangle = new Rectangle(4.0, 6.0);
+
+        FigurePair<Circle, Rectangle> figurePair = new FigurePair<>(circle, rectangle);
+
+        System.out.println("FigurePair: " + figurePair);
+
+    }
+}
+
+
+        //HW 8
+     /*   Analyzable analyzable = new Analyzable();
 
         Field[] fields = analyzable.getClass().getDeclaredFields();
 
@@ -39,7 +70,7 @@ public class Main {
         //non-matching fields
         System.out.println("Non-Matching Fields (Name does NOT match the annotation's 'name'):");
         nonMatchingFields.forEach(field -> System.out.println(field.getName()));
-
+*/
         //HW - 6
 /*
         // Circle
@@ -73,14 +104,7 @@ public class Main {
         Triangle invalidTriangle = new Triangle(1, 2, 10);
     }
   */
-}
 
-
-
-
-
-
-}
     /*
     // HW - 5
     public static void main(String[] args) {

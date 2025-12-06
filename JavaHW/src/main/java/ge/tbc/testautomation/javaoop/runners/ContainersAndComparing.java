@@ -1,3 +1,4 @@
+/*
 package ge.tbc.testautomation.javaoop.runners;
 import ge.tbc.testautomation.javaoop.figures.Figure;
 import ge.tbc.testautomation.javaoop.figures.Circle;
@@ -88,7 +89,7 @@ public class ContainersAndComparing {
         rectangles.add(new Rectangle(3, 3));
         rectangles.add(new Rectangle(6, 2));
 
-        Collections.sort(rectangles);
+        Collections.sort(rectangle);
         System.out.println(rectangles);
 
         //TreeSet - Rectangle
@@ -102,3 +103,4 @@ public class ContainersAndComparing {
     }
 
 }
+*/

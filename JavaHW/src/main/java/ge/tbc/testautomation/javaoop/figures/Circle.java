@@ -1,10 +1,30 @@
 package ge.tbc.testautomation.javaoop.figures;
+
+import ge.tbc.testautomation.javaoop.figures.Figure;
 import ge.tbc.testautomation.abstractClassesInterfaces.interfaces.IResizable;
 import ge.tbc.testautomation.abstractClassesInterfaces.interfaces.IValidFigure;
 
-public class Circle implements Comparable{
+public class Circle extends Figure {
 
     private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                '}';
+    }
+}
+   /* private double radius;
 
     public Circle(double radius) {
         this.radius = radius;
@@ -31,7 +51,7 @@ public class Circle implements Comparable{
         } else {
             return 0;
         }
-    }
+    }*/
 
     /*
     //HW 6
@@ -123,4 +143,4 @@ public class Circle implements Comparable{
 
      */
 
-}
+

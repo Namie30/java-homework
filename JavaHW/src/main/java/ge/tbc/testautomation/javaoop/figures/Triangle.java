@@ -1,3 +1,4 @@
+/*
 package ge.tbc.testautomation.javaoop.figures;
 
 import ge.tbc.testautomation.abstractClassesInterfaces.interfaces.IResizable;
@@ -26,15 +27,15 @@ public class Triangle extends Figure implements IResizable, IValidFigure {
         return Math.sqrt(s * (s - a) * (s - b) * (s - c));         // Heron's formula
     }
 
-    @Override
-    public double getLength() {
-        return a + b + c;   //P
-    }
-
-    @Override
-    public void printPackageName() {
-        System.out.println(getClass().getPackageName());
-    }
+//    @Override
+//    public double getLength() {
+//        return a + b + c;   //P
+//    }
+//
+//    @Override
+//    public void printPackageName() {
+//        System.out.println(getClass().getPackageName());
+//    }
 
     @Override
     public void doubleSize() {
@@ -73,7 +74,8 @@ public class Triangle extends Figure implements IResizable, IValidFigure {
         return c;
     }
 
-    /*
+    */
+/*
     private  double a;
     private  double b;
     private  double c;
@@ -104,5 +106,7 @@ public class Triangle extends Figure implements IResizable, IValidFigure {
         return "Triangle has 3 sides and a height";
     }
 
-     */
+     *//*
+
 }
+*/
